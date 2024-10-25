@@ -1,4 +1,4 @@
-#include<iostream>
+ #include<iostream>
 using namespace std;
 void ms(int arr[], int low,int mid, int high)
 {

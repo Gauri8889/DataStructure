@@ -1,4 +1,4 @@
-/*selection sort*/
+ /*selection sort*/
 #include<iostream>
 using namespace std;
 int main()
