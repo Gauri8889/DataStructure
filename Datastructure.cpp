@@ -2,7 +2,6 @@
 using namespace std;
 int main()
 {
-    
     int arr[]={8,2,1,9,80,20},n;
     int s=sizeof(arr)/sizeof(arr[0]);
     for(int i=0;i<s;i++)
