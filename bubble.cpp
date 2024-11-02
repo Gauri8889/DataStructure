@@ -9,6 +9,7 @@ int main()
     {
         cout<<arr[i]<<"\t";
     }
+    
     cout<<"\n after applying bubble sort\n";
     for(int i=0;i<s;i++)
     {
