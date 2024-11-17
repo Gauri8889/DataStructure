@@ -13,7 +13,9 @@ cout<<arr[i]<<"\t";
 cout<<"\n";
 for(int i=1;i<n;i++)
 {
+    
 sorted=i;
+
 while(sorted>0 && arr[sorted]<arr[sorted-1])
 {
 tmp=arr[sorted-1];//1
