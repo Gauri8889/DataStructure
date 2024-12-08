@@ -2,7 +2,6 @@
 using namespace std;
 #include<stack>
 
-
 bool valid(string &s, int len)
 {
     stack<char> stk;
