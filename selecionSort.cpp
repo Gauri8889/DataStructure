@@ -1,33 +1,49 @@
- /*selection sort*/
 #include<iostream>
 using namespace std;
-int main()
+#include<stack>
+
+bool valid(string &s, int len)
 {
-    int arr[]={2,1,7,9,5};
-    int chotu;
-    int n=sizeof(arr)/sizeof(arr[0]);
-    for(int i=0;i<n;i++)
-    {
-        cout<<arr[i]<<"\t";
-    }
-    cout<<"\n";
-    for(int i=0;i<n;i++)
-    {
-        chotu=i;
-        for(int j=i+1;j<n;j++)
-        {
-            if(arr[chotu]>arr[j])
-            {
-                chotu=j;
+    stack<char> stk;
+    for (int i = 0; i < len; i++) {
+        if (s[i] == '{' || s[i] == '(' || s[i] == '[') {
+            stk.push(s[i]);
+        }
+        else if (s[i] == '}') {
+            if (!stk.empty() && stk.top() == '{') {
+                stk.pop();
+            } else {
+                return false;  // Invalid closing bracket
             }
         }
-        if(chotu!=i)
-        {
-            int tmp;
-            tmp=arr[chotu];
-            arr[chotu]=arr[i];
-            arr[i]=tmp;
+        else if (s[i] == ')') {
+            if (!stk.empty() && stk.top() == '(') {
+                stk.pop();
+            } else {
+                return false;  // Invalid closing bracket
+            }
+        }
+        else if (s[i] == ']') {
+            if (!stk.empty() && stk.top() == '[') {
+                stk.pop();
+            } else {
+                return false;  // Invalid closing bracket
+            }
         }
     }
-    cout<<"\n after selection sort\n";
+
+    // If stack is empty, it means all brackets are matched
+    return stk.empty();
+}
+
+int main()
+{
+    string s = "[{}]";
+    bool i = valid(s, s.length());
+    if (i) {
+        cout << "valid";
+    } else {
+        cout << "invalid";
+    }
+    return 0;
 }
