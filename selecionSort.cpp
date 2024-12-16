@@ -35,7 +35,6 @@ bool valid(string &s, int len)
     // If stack is empty, it means all brackets are matched
     return stk.empty();
 }
-
 int main()
 {
     string s = "[{}]";
